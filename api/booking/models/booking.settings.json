@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookings",
+  "info": {
+    "name": "Booking",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tel": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "duration": {
+      "type": "integer"
+    },
+    "treatment": {
+      "model": "treatment"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}
